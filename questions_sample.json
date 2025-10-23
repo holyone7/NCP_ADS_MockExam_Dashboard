@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1,
+    "domain": "Data Analysis",
+    "q": "Sample question",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer": "A",
+    "explanation": "Sample"
+  }
+]

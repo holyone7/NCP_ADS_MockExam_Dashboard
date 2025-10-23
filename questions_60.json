@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "domain": "Data Analysis",
+    "difficulty": "Intermediate",
+    "q": "Which cuDF operation most likely causes PCIe bottlenecks?",
+    "options": [
+      "Boolean masking",
+      "to_pandas()",
+      "Groupby aggregation",
+      "Sorting by index"
+    ],
+    "answer": "B",
+    "explanation": "to_pandas() moves data to CPU and incurs PCIe transfer."
+  }
+]
