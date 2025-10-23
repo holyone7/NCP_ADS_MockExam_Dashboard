@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "domain": "Data Analysis",
-    "q": "Sample question",
+    "domain": "Sample",
+    "q": "Sample Q",
     "options": [
       "A",
       "B",
@@ -10,6 +10,6 @@
       "D"
     ],
     "answer": "A",
-    "explanation": "Sample"
+    "explanation": "..."
   }
 ]

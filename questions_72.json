@@ -1,0 +1,1010 @@
+[
+  {
+    "id": 1,
+    "domain": "Data Preparation and Loading",
+    "difficulty": "Beginner",
+    "q": "Which RAPIDS library provides GPU DataFrame operations similar to pandas?",
+    "options": [
+      "cuDF",
+      "cuML",
+      "cuGraph",
+      "Numba"
+    ],
+    "answer": "A",
+    "explanation": "cuDF mirrors pandas-like DataFrame APIs on GPU."
+  },
+  {
+    "id": 2,
+    "domain": "Data Preparation and Loading",
+    "difficulty": "Beginner",
+    "q": "Which file format is best for columnar GPU loading?",
+    "options": [
+      "CSV",
+      "JSON",
+      "Parquet",
+      "TXT"
+    ],
+    "answer": "C",
+    "explanation": "Parquet is columnar and efficient for GPU IO."
+  },
+  {
+    "id": 3,
+    "domain": "Data Preparation and Loading",
+    "difficulty": "Intermediate",
+    "q": "Which NVTabular op scales continuous features?",
+    "options": [
+      "Categorify",
+      "Normalize",
+      "JoinGroupby",
+      "Clip"
+    ],
+    "answer": "B",
+    "explanation": "`Normalize` scales continuous columns efficiently."
+  },
+  {
+    "id": 4,
+    "domain": "Data Preparation and Loading",
+    "difficulty": "Intermediate",
+    "q": "Which cuDF reader is most efficient for columnar data?",
+    "options": [
+      "read_csv",
+      "read_parquet",
+      "read_json",
+      "read_sql"
+    ],
+    "answer": "B",
+    "explanation": "`read_parquet` leverages columnar decoding on GPU."
+  },
+  {
+    "id": 5,
+    "domain": "Data Preparation and Loading",
+    "difficulty": "Intermediate",
+    "q": "How to reduce PCIe transfer overhead in ETL?",
+    "options": [
+      "Convert to pandas first",
+      "Keep ops on GPU",
+      "Write interim CSVs",
+      "Use CPU caching"
+    ],
+    "answer": "B",
+    "explanation": "Avoid host-device transfers by staying on GPU."
+  },
+  {
+    "id": 6,
+    "domain": "Data Preparation and Loading",
+    "difficulty": "Intermediate",
+    "q": "Which library accelerates image/video data loading pipelines?",
+    "options": [
+      "cuML",
+      "NVTabular",
+      "DALI",
+      "cuxfilter"
+    ],
+    "answer": "C",
+    "explanation": "DALI accelerates data loading/augmentation on GPU."
+  },
+  {
+    "id": 7,
+    "domain": "Data Preparation and Loading",
+    "difficulty": "Advanced",
+    "q": "Which API enables zero-copy tensors across libs?",
+    "options": [
+      "DLPack",
+      "Arrow IPC",
+      "CUDA memcpy",
+      "ONNX"
+    ],
+    "answer": "A",
+    "explanation": "DLPack shares tensors without copies."
+  },
+  {
+    "id": 8,
+    "domain": "Data Preparation and Loading",
+    "difficulty": "Intermediate",
+    "q": "Which conversion improves GPU memory efficiency for strings?",
+    "options": [
+      "int64\u2192int8",
+      "float32\u2192float64",
+      "str\u2192category",
+      "object\u2192string"
+    ],
+    "answer": "C",
+    "explanation": "Categoricals compress repeated strings."
+  },
+  {
+    "id": 9,
+    "domain": "Data Preparation and Loading",
+    "difficulty": "Advanced",
+    "q": "Which enables distributed GPU data loading?",
+    "options": [
+      "dask-cudf",
+      "cuxfilter",
+      "NVTabular",
+      "cuSignal"
+    ],
+    "answer": "A",
+    "explanation": "dask-cudf partitions across workers/GPUs."
+  },
+  {
+    "id": 10,
+    "domain": "Data Preparation and Loading",
+    "difficulty": "Beginner",
+    "q": "How do you join two cuDF DataFrames by key?",
+    "options": [
+      "merge()",
+      "concat()",
+      "union()",
+      "stack()"
+    ],
+    "answer": "A",
+    "explanation": "`merge()` performs GPU joins."
+  },
+  {
+    "id": 11,
+    "domain": "Data Analysis with RAPIDS",
+    "difficulty": "Beginner",
+    "q": "Which cuDF method performs aggregation?",
+    "options": [
+      "groupby()",
+      "aggregate_cpu()",
+      "reduce()",
+      "map()"
+    ],
+    "answer": "A",
+    "explanation": "`groupby()` runs GPU aggregations."
+  },
+  {
+    "id": 12,
+    "domain": "Data Analysis with RAPIDS",
+    "difficulty": "Intermediate",
+    "q": "How does cuDF differ from pandas?",
+    "options": [
+      "CPU only",
+      "GPU parallelism",
+      "Spark-only",
+      "Single-threaded"
+    ],
+    "answer": "B",
+    "explanation": "cuDF uses GPU cores for acceleration."
+  },
+  {
+    "id": 13,
+    "domain": "Data Analysis with RAPIDS",
+    "difficulty": "Intermediate",
+    "q": "What does `.to_pandas()` do in cuDF?",
+    "options": [
+      "GPU\u2192CPU conversion",
+      "Saves parquet",
+      "Parallelizes ops",
+      "Adds index"
+    ],
+    "answer": "A",
+    "explanation": "Transfers to host pandas DataFrame."
+  },
+  {
+    "id": 14,
+    "domain": "Data Analysis with RAPIDS",
+    "difficulty": "Intermediate",
+    "q": "Which computes correlation on GPU DataFrames?",
+    "options": [
+      "corr()",
+      "cov()",
+      "aggregate()",
+      "describe()"
+    ],
+    "answer": "A",
+    "explanation": "`corr()` is GPU-accelerated in cuDF."
+  },
+  {
+    "id": 15,
+    "domain": "Data Analysis with RAPIDS",
+    "difficulty": "Intermediate",
+    "q": "Which action most risks PCIe bottlenecks?",
+    "options": [
+      "Filtering",
+      "Sorting",
+      "to_pandas()",
+      "astype()"
+    ],
+    "answer": "C",
+    "explanation": "Moving data to CPU over PCIe is slow."
+  },
+  {
+    "id": 16,
+    "domain": "Data Analysis with RAPIDS",
+    "difficulty": "Advanced",
+    "q": "Which provides SQL on cuDF?",
+    "options": [
+      "BlazingSQL",
+      "SQLite",
+      "DuckDB",
+      "SparkSQL"
+    ],
+    "answer": "A",
+    "explanation": "BlazingSQL queries cuDF on GPU."
+  },
+  {
+    "id": 17,
+    "domain": "Data Analysis with RAPIDS",
+    "difficulty": "Intermediate",
+    "q": "How to remove nulls?",
+    "options": [
+      "dropna()",
+      "replace()",
+      "fillna()",
+      "mask()"
+    ],
+    "answer": "A",
+    "explanation": "`dropna()` removes null rows."
+  },
+  {
+    "id": 18,
+    "domain": "Data Analysis with RAPIDS",
+    "difficulty": "Beginner",
+    "q": "What does `cudf.concat()` do?",
+    "options": [
+      "Concatenate DFs",
+      "Add columns",
+      "Keyed merge",
+      "Split cols"
+    ],
+    "answer": "A",
+    "explanation": "Concats along rows/columns on GPU."
+  },
+  {
+    "id": 19,
+    "domain": "Data Analysis with RAPIDS",
+    "difficulty": "Advanced",
+    "q": "Which tool profiles cuDF kernels?",
+    "options": [
+      "Nsight Systems",
+      "TensorBoard",
+      "Dask Dashboard",
+      "Prometheus"
+    ],
+    "answer": "A",
+    "explanation": "Nsight Systems shows GPU timelines."
+  },
+  {
+    "id": 20,
+    "domain": "Data Analysis with RAPIDS",
+    "difficulty": "Intermediate",
+    "q": "Which API applies custom kernel over groups?",
+    "options": [
+      "agg()",
+      "transform()",
+      "apply_grouped()",
+      "assign()"
+    ],
+    "answer": "C",
+    "explanation": "`apply_grouped()` executes custom GPU kernels per group."
+  },
+  {
+    "id": 21,
+    "domain": "Machine Learning with cuML",
+    "difficulty": "Beginner",
+    "q": "Which cuML class fits linear regression?",
+    "options": [
+      "LinearRegression",
+      "fit()",
+      "cuRegressor",
+      "OLS"
+    ],
+    "answer": "A",
+    "explanation": "`LinearRegression` trains on GPU arrays."
+  },
+  {
+    "id": 22,
+    "domain": "Machine Learning with cuML",
+    "difficulty": "Intermediate",
+    "q": "Which cuML algorithms do clustering?",
+    "options": [
+      "KMeans",
+      "DBSCAN",
+      "Both",
+      "RandomForest"
+    ],
+    "answer": "C",
+    "explanation": "cuML supports KMeans and DBSCAN."
+  },
+  {
+    "id": 23,
+    "domain": "Machine Learning with cuML",
+    "difficulty": "Intermediate",
+    "q": "RandomForest training class in cuML?",
+    "options": [
+      "RFClassifier",
+      "RandomForestClassifier",
+      "RFModel",
+      "ClassifierGPU"
+    ],
+    "answer": "B",
+    "explanation": "`RandomForestClassifier` fits RF."
+  },
+  {
+    "id": 24,
+    "domain": "Machine Learning with cuML",
+    "difficulty": "Intermediate",
+    "q": "GPU-accelerated PCA API?",
+    "options": [
+      "cuml.PCA",
+      "cuml.Decomposition",
+      "cuml.UMAP",
+      "cuml.SVDlite"
+    ],
+    "answer": "A",
+    "explanation": "`cuml.PCA` reduces dimensions."
+  },
+  {
+    "id": 25,
+    "domain": "Machine Learning with cuML",
+    "difficulty": "Advanced",
+    "q": "Why is GPU UMAP beneficial?",
+    "options": [
+      "Interpretability",
+      "Speed",
+      "Less memory",
+      "Higher accuracy"
+    ],
+    "answer": "B",
+    "explanation": "Massively parallel neighbor ops."
+  },
+  {
+    "id": 26,
+    "domain": "Machine Learning with cuML",
+    "difficulty": "Intermediate",
+    "q": "How to evaluate accuracy of a classifier in cuML?",
+    "options": [
+      "score()",
+      "validate()",
+      "accuracy_gpu()",
+      "assess()"
+    ],
+    "answer": "A",
+    "explanation": "`score()` returns accuracy metric."
+  },
+  {
+    "id": 27,
+    "domain": "Machine Learning with cuML",
+    "difficulty": "Beginner",
+    "q": "Before fitting cuML, data should be:",
+    "options": [
+      "On GPU (cuDF/CuPy)",
+      "CSV",
+      "Python lists",
+      "Pickled"
+    ],
+    "answer": "A",
+    "explanation": "cuML expects GPU-resident arrays."
+  },
+  {
+    "id": 28,
+    "domain": "Machine Learning with cuML",
+    "difficulty": "Advanced",
+    "q": "Multi-GPU training with cuML uses:",
+    "options": [
+      "Dask cuML",
+      "cuGraph",
+      "Ray only",
+      "MPI4py only"
+    ],
+    "answer": "A",
+    "explanation": "Use dask-cuml estimators."
+  },
+  {
+    "id": 29,
+    "domain": "Machine Learning with cuML",
+    "difficulty": "Intermediate",
+    "q": "Which dimensionality reducers are in cuML?",
+    "options": [
+      "t-SNE",
+      "PCA",
+      "UMAP",
+      "All"
+    ],
+    "answer": "D",
+    "explanation": "cuML implements t\u2011SNE, PCA, UMAP on GPU."
+  },
+  {
+    "id": 30,
+    "domain": "Machine Learning with cuML",
+    "difficulty": "Advanced",
+    "q": "Unsupervised clustering quality metric?",
+    "options": [
+      "Silhouette",
+      "Accuracy",
+      "F1",
+      "ROC-AUC"
+    ],
+    "answer": "A",
+    "explanation": "Silhouette measures cohesion/separation."
+  },
+  {
+    "id": 31,
+    "domain": "Deep Learning on GPU",
+    "difficulty": "Beginner",
+    "q": "Which libraries provide DL GPU acceleration?",
+    "options": [
+      "PyTorch",
+      "TensorFlow",
+      "Both",
+      "MXNet only"
+    ],
+    "answer": "C",
+    "explanation": "PyTorch and TF use CUDA."
+  },
+  {
+    "id": 32,
+    "domain": "Deep Learning on GPU",
+    "difficulty": "Intermediate",
+    "q": "Mixed precision training achieves:",
+    "options": [
+      "Higher precision",
+      "Faster & less memory",
+      "Lower accuracy",
+      "No change"
+    ],
+    "answer": "B",
+    "explanation": "FP16 speeds and saves memory."
+  },
+  {
+    "id": 33,
+    "domain": "Deep Learning on GPU",
+    "difficulty": "Intermediate",
+    "q": "NVIDIA tool for mixed precision utilities?",
+    "options": [
+      "Apex",
+      "AMP",
+      "cuML",
+      "OpenCV"
+    ],
+    "answer": "A",
+    "explanation": "Apex supports AMP & multi-GPU."
+  },
+  {
+    "id": 34,
+    "domain": "Deep Learning on GPU",
+    "difficulty": "Advanced",
+    "q": "Which profiler analyzes PyTorch GPU performance deeply?",
+    "options": [
+      "TensorBoard",
+      "Nsight Systems",
+      "nvtop",
+      "Perf"
+    ],
+    "answer": "B",
+    "explanation": "Nsight Systems traces kernels & APIs."
+  },
+  {
+    "id": 35,
+    "domain": "Deep Learning on GPU",
+    "difficulty": "Intermediate",
+    "q": "Move PyTorch tensor to GPU:",
+    "options": [
+      ".to('cuda')",
+      ".gpu()",
+      ".enable_cuda()",
+      ".device('gpu')"
+    ],
+    "answer": "A",
+    "explanation": "`.to('cuda')` selects CUDA device."
+  },
+  {
+    "id": 36,
+    "domain": "Deep Learning on GPU",
+    "difficulty": "Beginner",
+    "q": "Check CUDA availability in PyTorch:",
+    "options": [
+      "torch.cuda.is_available()",
+      "torch.gpu.ready()",
+      "cuda.available()",
+      "torch.has_gpu()"
+    ],
+    "answer": "A",
+    "explanation": "Returns True if CUDA available."
+  },
+  {
+    "id": 37,
+    "domain": "Deep Learning on GPU",
+    "difficulty": "Intermediate",
+    "q": "Control device placement in TF:",
+    "options": [
+      "tf.data",
+      "tf.device",
+      "tf.cuda",
+      "tf.gpu"
+    ],
+    "answer": "B",
+    "explanation": "`tf.device('/GPU:0')` sets device."
+  },
+  {
+    "id": 38,
+    "domain": "Deep Learning on GPU",
+    "difficulty": "Beginner",
+    "q": "Visualize training metrics in TF:",
+    "options": [
+      "TensorBoard",
+      "Matplotlib",
+      "Seaborn",
+      "Excel"
+    ],
+    "answer": "A",
+    "explanation": "TensorBoard dashboards training runs."
+  },
+  {
+    "id": 39,
+    "domain": "Deep Learning on GPU",
+    "difficulty": "Advanced",
+    "q": "Common DL bottleneck mitigated by DALI:",
+    "options": [
+      "Data loading",
+      "GPU kernels",
+      "Networking",
+      "Logging"
+    ],
+    "answer": "A",
+    "explanation": "DALI accelerates input pipeline."
+  },
+  {
+    "id": 40,
+    "domain": "Deep Learning on GPU",
+    "difficulty": "Advanced",
+    "q": "GPU-accelerated image preprocessing lib for PyTorch:",
+    "options": [
+      "DALI",
+      "Albumentations",
+      "cv2",
+      "PIL"
+    ],
+    "answer": "A",
+    "explanation": "DALI runs preprocessing on GPU."
+  },
+  {
+    "id": 41,
+    "domain": "Optimization and Profiling",
+    "difficulty": "Beginner",
+    "q": "Tool for end-to-end GPU timeline profiling:",
+    "options": [
+      "Nsight Systems",
+      "Nsight Compute",
+      "PySpy",
+      "Perf"
+    ],
+    "answer": "A",
+    "explanation": "Nsight Systems visualizes CPU/GPU timelines."
+  },
+  {
+    "id": 42,
+    "domain": "Optimization and Profiling",
+    "difficulty": "Intermediate",
+    "q": "Kernel-level GPU profiler:",
+    "options": [
+      "Nsight Compute",
+      "TensorBoard",
+      "nvstat",
+      "Nsight Systems"
+    ],
+    "answer": "A",
+    "explanation": "Nsight Compute analyzes kernels."
+  },
+  {
+    "id": 43,
+    "domain": "Optimization and Profiling",
+    "difficulty": "Intermediate",
+    "q": "CUDA stream is:",
+    "options": [
+      "Thread group",
+      "Independent GPU op queue",
+      "CPU scheduler",
+      "Kernel grid"
+    ],
+    "answer": "B",
+    "explanation": "Streams allow concurrency."
+  },
+  {
+    "id": 44,
+    "domain": "Optimization and Profiling",
+    "difficulty": "Intermediate",
+    "q": "RAPIDS command to set pool allocator:",
+    "options": [
+      "RMM.reinitialize()",
+      "cudf.set_pool()",
+      "cuda.pool()",
+      "rmm.pool(True)"
+    ],
+    "answer": "A",
+    "explanation": "RMM can preallocate pool."
+  },
+  {
+    "id": 45,
+    "domain": "Optimization and Profiling",
+    "difficulty": "Advanced",
+    "q": "Which indicates memory bottleneck?",
+    "options": [
+      "Low utilization",
+      "Low SM occupancy",
+      "High mem utilization",
+      "High IPC"
+    ],
+    "answer": "C",
+    "explanation": "High mem use can bottleneck bandwidth."
+  },
+  {
+    "id": 46,
+    "domain": "Optimization and Profiling",
+    "difficulty": "Intermediate",
+    "q": "Nsight feature to see kernel overlap:",
+    "options": [
+      "Timeline view",
+      "RAM chart",
+      "Utilization widget",
+      "Clock plot"
+    ],
+    "answer": "A",
+    "explanation": "Timeline shows overlapping kernels."
+  },
+  {
+    "id": 47,
+    "domain": "Optimization and Profiling",
+    "difficulty": "Beginner",
+    "q": "`cuda.synchronize()` does what?",
+    "options": [
+      "Stops CPU",
+      "Syncs GPU with host",
+      "Resets GPU",
+      "Starts GPU"
+    ],
+    "answer": "B",
+    "explanation": "Waits for GPU to finish ops."
+  },
+  {
+    "id": 48,
+    "domain": "Optimization and Profiling",
+    "difficulty": "Advanced",
+    "q": "RAPIDS config to reduce fragmentation:",
+    "options": [
+      "RMM Pool Allocator",
+      "Pinned memory",
+      "Zero-copy",
+      "BFloat16"
+    ],
+    "answer": "A",
+    "explanation": "Pool prealloc reduces fragmentation."
+  },
+  {
+    "id": 49,
+    "domain": "Optimization and Profiling",
+    "difficulty": "Advanced",
+    "q": "Tool to analyze occupancy and throughput:",
+    "options": [
+      "Nsight Compute",
+      "htop",
+      "nvtop",
+      "TensorBoard"
+    ],
+    "answer": "A",
+    "explanation": "Nsight Compute shows occupancy/memory stats."
+  },
+  {
+    "id": 50,
+    "domain": "Optimization and Profiling",
+    "difficulty": "Intermediate",
+    "q": "Feature that overlaps copy and compute:",
+    "options": [
+      "Streams",
+      "Tensor Cores",
+      "Graphs",
+      "Events"
+    ],
+    "answer": "A",
+    "explanation": "Streams enable overlap to hide latency."
+  },
+  {
+    "id": 51,
+    "domain": "Visualization and Interpretation",
+    "difficulty": "Beginner",
+    "q": "GPU dashboarding with cuDF is powered by:",
+    "options": [
+      "cuxfilter",
+      "Seaborn",
+      "Plotly",
+      "ggplot"
+    ],
+    "answer": "A",
+    "explanation": "cuxfilter binds cuDF to interactive dashboards."
+  },
+  {
+    "id": 52,
+    "domain": "Visualization and Interpretation",
+    "difficulty": "Intermediate",
+    "q": "Seamless cuDF plotting library:",
+    "options": [
+      "hvPlot",
+      "Matplotlib",
+      "Seaborn",
+      "Altair only"
+    ],
+    "answer": "A",
+    "explanation": "hvPlot integrates with cuDF."
+  },
+  {
+    "id": 53,
+    "domain": "Visualization and Interpretation",
+    "difficulty": "Intermediate",
+    "q": "GPU cross-filtering across charts is provided by:",
+    "options": [
+      "cuxfilter",
+      "Holoviews",
+      "Altair",
+      "ChartJS"
+    ],
+    "answer": "A",
+    "explanation": "cuxfilter supports linked brushing on GPU."
+  },
+  {
+    "id": 54,
+    "domain": "Visualization and Interpretation",
+    "difficulty": "Beginner",
+    "q": "Show first rows of cuDF:",
+    "options": [
+      "head()",
+      "show()",
+      "peek()",
+      "top()"
+    ],
+    "answer": "A",
+    "explanation": "`head()` previews a DataFrame."
+  },
+  {
+    "id": 55,
+    "domain": "Visualization and Interpretation",
+    "difficulty": "Intermediate",
+    "q": "Frameworks to host interactive dashboards:",
+    "options": [
+      "Panel",
+      "Streamlit",
+      "Dash",
+      "All of the above"
+    ],
+    "answer": "D",
+    "explanation": "All can host interactive GPU visualizations."
+  },
+  {
+    "id": 56,
+    "domain": "Visualization and Interpretation",
+    "difficulty": "Advanced",
+    "q": "Renderer for 100M+ points on GPU:",
+    "options": [
+      "Datashader",
+      "Matplotlib",
+      "Seaborn",
+      "ggplot"
+    ],
+    "answer": "A",
+    "explanation": "Datashader renders massive datasets efficiently."
+  },
+  {
+    "id": 57,
+    "domain": "Visualization and Interpretation",
+    "difficulty": "Intermediate",
+    "q": "Visualize GPU perf over time:",
+    "options": [
+      "TensorBoard",
+      "Matplotlib",
+      "WandB",
+      "Seaborn"
+    ],
+    "answer": "A",
+    "explanation": "TensorBoard tracks GPU/training metrics."
+  },
+  {
+    "id": 58,
+    "domain": "Visualization and Interpretation",
+    "difficulty": "Beginner",
+    "q": "Histogram on cuDF via hvPlot:",
+    "options": [
+      "df.hvplot.hist()",
+      "df.plot.hist()",
+      "df.gpu.hist()",
+      "df.chart()"
+    ],
+    "answer": "A",
+    "explanation": "`hvplot` is cuDF-friendly."
+  },
+  {
+    "id": 59,
+    "domain": "Visualization and Interpretation",
+    "difficulty": "Intermediate",
+    "q": "cuxfilter categorical filter widgets include:",
+    "options": [
+      "dropdown",
+      "multi_select",
+      "checkbox_group",
+      "All of the above"
+    ],
+    "answer": "D",
+    "explanation": "Multiple categorical widgets supported."
+  },
+  {
+    "id": 60,
+    "domain": "Visualization and Interpretation",
+    "difficulty": "Advanced",
+    "q": "Renderer that boosts WebGL GPU viz performance:",
+    "options": [
+      "Datashader",
+      "Bokeh",
+      "Holoviews",
+      "Plotly Express"
+    ],
+    "answer": "A",
+    "explanation": "Datashader uses GPU-accelerated rendering."
+  },
+  {
+    "id": 61,
+    "domain": "Advanced GPU Systems",
+    "difficulty": "Advanced",
+    "q": "Which DALI feature enables asynchronous prefetching of batches to overlap CPU and GPU stages?",
+    "options": [
+      "Pipeline.prefetch_queue_depth",
+      "Reader.buffer_size",
+      "pipeline.asynchronous=True",
+      "executor.num_threads"
+    ],
+    "answer": "A",
+    "explanation": "DALI uses prefetch queues to overlap stages and increase throughput."
+  },
+  {
+    "id": 62,
+    "domain": "Advanced GPU Systems",
+    "difficulty": "Advanced",
+    "q": "Which DALI operator is typically GPU-accelerated and reduces CPU augmentation bottlenecks?",
+    "options": [
+      "decoders.image",
+      "fn.rotate",
+      "fn.brightness_contrast",
+      "All of the above"
+    ],
+    "answer": "D",
+    "explanation": "Many DALI ops run on GPU, lowering input pipeline latency."
+  },
+  {
+    "id": 63,
+    "domain": "Advanced GPU Systems",
+    "difficulty": "Advanced",
+    "q": "To avoid host copies when handing DALI tensors to DL frameworks, you should prefer:",
+    "options": [
+      "NumPy conversion",
+      "Torch DLPack interface",
+      "PNG export",
+      "JSON serialization"
+    ],
+    "answer": "B",
+    "explanation": "DLPack enables zero-copy handoff into frameworks like PyTorch."
+  },
+  {
+    "id": 64,
+    "domain": "Advanced GPU Systems",
+    "difficulty": "Advanced",
+    "q": "Which Nsight Systems view helps identify CPU\u2194GPU synchronization stalls tied to CUDA API calls?",
+    "options": [
+      "CUDA API Trace",
+      "SM Occupancy",
+      "Instruction Mix",
+      "Memory Chart"
+    ],
+    "answer": "A",
+    "explanation": "The CUDA API trace and timeline show synchronization points."
+  },
+  {
+    "id": 65,
+    "domain": "Advanced GPU Systems",
+    "difficulty": "Advanced",
+    "q": "A kernel shows poor overlap with H2D copies. What\u2019s a first optimization step?",
+    "options": [
+      "Use one stream only",
+      "Increase stream concurrency and use pinned memory",
+      "Lower GPU clocks",
+      "Disable batching"
+    ],
+    "answer": "B",
+    "explanation": "Pinned memory + streams allow overlapping copies with compute."
+  },
+  {
+    "id": 66,
+    "domain": "Advanced GPU Systems",
+    "difficulty": "Advanced",
+    "q": "Which indicator most strongly suggests launch-bound kernels?",
+    "options": [
+      "High copy engine utilization",
+      "Many short kernels with gaps in timeline",
+      "High shared memory usage",
+      "100% SM occupancy"
+    ],
+    "answer": "B",
+    "explanation": "Frequent short kernels with gaps point to launch overhead issues."
+  },
+  {
+    "id": 67,
+    "domain": "Advanced GPU Systems",
+    "difficulty": "Advanced",
+    "q": "What is the main benefit of enabling UCX with NVLink for Dask-cuDF shuffles?",
+    "options": [
+      "Better CPU threading",
+      "Lower network latency and higher bandwidth for GPU buffers",
+      "Less VRAM used",
+      "Automatic schema inference"
+    ],
+    "answer": "B",
+    "explanation": "UCX routes device buffers over fast interconnects like NVLink/IB."
+  },
+  {
+    "id": 68,
+    "domain": "Advanced GPU Systems",
+    "difficulty": "Advanced",
+    "q": "When scaling to multi-node, which parameter is most critical to maximize inter-GPU throughput?",
+    "options": [
+      "Disk space",
+      "Interconnect bandwidth/latency",
+      "CPU cache size",
+      "Python version"
+    ],
+    "answer": "B",
+    "explanation": "Fast interconnects dominate shuffle performance."
+  },
+  {
+    "id": 69,
+    "domain": "Advanced GPU Systems",
+    "difficulty": "Advanced",
+    "q": "Which is a recommended practice for large all-to-all GPU shuffles?",
+    "options": [
+      "Huge monolithic partitions",
+      "Broadcast everything",
+      "Proper partition sizing and spilling policy",
+      "Disable UCX"
+    ],
+    "answer": "C",
+    "explanation": "Balanced partitions and spill policies reduce memory pressure."
+  },
+  {
+    "id": 70,
+    "domain": "Advanced GPU Systems",
+    "difficulty": "Advanced",
+    "q": "Which estimator enables distributed multi-GPU Random Forest training?",
+    "options": [
+      "cuml.dask.ensemble.RandomForestClassifier",
+      "cuml.RandomForestClassifier",
+      "sklearn.ensemble.RandomForestClassifier",
+      "xgboost.dask.DaskXGBClassifier"
+    ],
+    "answer": "A",
+    "explanation": "Use the Dask-cuML estimator for distributed RF."
+  },
+  {
+    "id": 71,
+    "domain": "Advanced GPU Systems",
+    "difficulty": "Advanced",
+    "q": "A Dask-cuML pipeline runs out of memory during shuffle. First mitigation?",
+    "options": [
+      "Increase partition size",
+      "Reduce partition size / increase partitions",
+      "Switch to float64",
+      "Disable UCX"
+    ],
+    "answer": "B",
+    "explanation": "Smaller partitions lower peak memory during shuffles."
+  },
+  {
+    "id": 72,
+    "domain": "Advanced GPU Systems",
+    "difficulty": "Advanced",
+    "q": "What is the advantage of calling persist() on intermediate GPU DataFrames?",
+    "options": [
+      "Forces CPU caching",
+      "Pins results in cluster memory to avoid recomputation",
+      "Converts to pandas",
+      "Disables spilling"
+    ],
+    "answer": "B",
+    "explanation": "Persist keeps results in worker memory to reuse across steps."
+  }
+]
